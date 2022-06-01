@@ -1,0 +1,38 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/*
+Runtime-11ms
+Memory-69.1 MB
+ */
+public class find_all_duplicates {
+    public List<Integer> findDuplicates(int[] nums) {
+        List<Integer> ans=new ArrayList<>();
+        int i=0;
+        while(i<nums.length){
+
+            int correct = nums[i]-1;
+            if(nums[i]!=nums[nums[i]-1]){
+                swap(nums,i,correct);
+            }
+
+            else{
+                i++;
+            }
+        }
+        for(int index=0;index<nums.length;index++){
+            if(nums[index]!=index+1){
+                ans.add(nums[index]);
+            }
+        }
+
+        return ans;
+    }
+    void swap(int arr[],int first,int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+}
