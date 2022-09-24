@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.List;
+
 public class time_difference {
 
         public int findMinDifference(List<String> timePoints) {
